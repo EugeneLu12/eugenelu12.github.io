@@ -1,0 +1,272 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  background-image: url("src/img/wood.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+.navigation {
+  height: 48px;
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif; 
+  font-size: 18px;
+  font-style: normal; 
+  font-variant: normal; 
+  font-weight: 700; 
+}
+
+.navBarHeader {
+  position: fixed;
+  height: 48px;
+  background-image: url("src/img/woodcropped.png");
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  display: inline-block;
+}
+
+.navigation a {
+  opacity: 0.5;
+}
+
+#home {
+  visibility: hidden;
+}
+
+.avatar {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.avatarimg {
+  max-width: 15%;
+  height: auto;
+  border-radius: 50%;
+  border: 10px solid rgba(255, 255, 255, .75);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+
+h1 {
+  opacity: 0.75;
+  font-family: 'Bebas Neue Regular';
+  font-size: 88px;
+  margin-top: 2.5em;
+  color: white;
+  text-align: center;
+}
+
+h2 {
+  width: 100%;
+  height: auto;
+  background-color: inherit;
+  opacity: 0.75;
+  font-family: 'Bebas Neue Regular';
+  font-size: 56px;
+  padding-top: 0.5em;
+  margin-top: 1em;
+  color: white;
+  text-align: center;
+}
+
+h3 {
+  width: 100%;
+  height: auto;
+  background-color: inherit;
+  font-family: 'Bebas Neue Regular';
+  font-size: 56px;
+  padding-top: 0.5em;
+  margin-top: 1em;
+  color: lightsteelblue;
+  text-align: center;
+}
+
+.skillsContainer {
+  margin-top: 20em;
+  max-height: 100%;
+  width: auto;
+  background-color: #303030;
+  color: white;
+  border-top: 4px solid rgba(255, 255, 255, .25);
+}
+
+.skill {
+  width: 30%;
+  padding: 1.6%;
+  display: inline-table;
+  float: none;
+  color: lightsteelblue;
+  font-size: 32px;
+  text-align: center;
+  font-family: "Georgia", "sans-serif";
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.skill img {
+  max-width: 10%;
+  height: auto;
+  display: block;
+  margin-left: 45%;
+  margin-bottom: 5%;
+  filter: brightness(150%);
+}
+
+.rightSkill {
+  border-left: 2px solid rgba(255, 255, 255, .25);
+}
+
+.middleSkill {
+  border-left: 2px solid rgba(255, 255, 255, .25);
+}
+
+.skillInfo {
+  font-size: 16px;
+  text-align: center;
+  color: white;
+}
+
+#project {
+  box-sizing: border-box;
+  width: 10em;
+  height: 10em;
+  padding: 1em;
+  margin: 1em;
+  border: 10px solid rgb(255, 255, 255, 0.75);
+  border-radius: 1em;
+  background-color: #3C3B3D;
+  opacity: 0.85;
+}
+
+#project:hover {
+  border-color: white;
+  opacity: 1;
+}
+
+.icon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  
+}
+
+.projHeader {
+  margin: 0;
+}
+
+.projectInfo {
+  margin: 0;
+  font-family: "Georgia", "sans-serif";
+  font-size: 16px;
+  display: none;
+  font-weight: bold;
+  text-align: center;
+}
+
+.projectInfo a {
+  display: table;
+  padding: 0.5em 0.5em 0.2em;
+  margin: auto;
+  color:skyblue;
+}
+
+.projectInfo a:hover {
+  border-radius: 5%;
+  border-bottom: 2px solid skyblue;
+}
+
+#project:hover .icon, #project:hover .projHeader {
+  display: none;
+}
+
+#project:hover .projectInfo {
+  display: block;
+}
+
+.projects {
+  font-family: 'Bebas Neue Regular';  
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  background-color: inherit;
+  margin-bottom: 10%;
+}
+
+.projectsContainer {
+  width: 100%;
+  display: inline-table;
+  background-color: grey; 
+}
+
+.contactContainer {
+  width: 100%;
+  display: inline-table;
+  background-color: #303030;
+}
+
+.contactContainer img {
+  width: 1.25%;
+  height: auto;
+  margin-right: 2.5%;
+}
+
+.contactInfo {
+  font-family: "Georgia", "sans-serif";
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  color: white;
+  margin-bottom: 5%;
+}
+
+.contactInfo a {
+  text-decoration: none;
+}
+
+.contactInfo a {
+  text-decoration: none;
+  border: 2px solid lightsteelblue;
+  padding: 0.5%;
+}
+
+.contactInfo a:hover {
+  background-color: lightsteelblue;
+  color: #1D1D1E;
+  border-color: #1D1D1E;
+}
+
+.contactInfo a:hover img{
+  filter: brightness(0%);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+  
+li {
+  float: left;
+}
+  
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 1em 2em 1em 2em;
+  text-decoration: none;
+}
