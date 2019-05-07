@@ -92,8 +92,8 @@ h3 {
 
 .skillsContainer {
   margin-top: 20em;
-  max-height: 100%;
-  width: auto;
+  width: 100%;
+  height: auto;
   background-color: #303030;
   color: white;
   border-top: 4px solid rgba(255, 255, 255, .25);
@@ -207,6 +207,7 @@ h3 {
 
 .projectsContainer {
   width: 100%;
+  margin-top: 0;
   display: inline-table;
   background-color: grey; 
 }
