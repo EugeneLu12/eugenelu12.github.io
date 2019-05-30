@@ -1,7 +1,7 @@
 html, body {
   height: 100%;
   width: 100%;
-  background-image: url("src/img/wood.png");
+  background-image: url("src/img/background.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -26,15 +26,16 @@ html, body {
 .navBarHeader {
   position: fixed;
   height: 48px;
-  background-image: url("src/img/woodcropped.png");
+  background-color: rgb(25, 25, 25);
   width: 100%;
   top: 0;
   z-index: 100;
   display: inline-block;
 }
 
-.navigation a {
-  opacity: 0.5;
+.navigation a:hover {
+  color: rgb(230, 197, 131);
+  text-shadow: 0 0 1px rgb(230, 197, 131);
 }
 
 #home {
@@ -47,17 +48,17 @@ html, body {
   align-items: center;
 }
 
-.avatarimg {
+.avatar img {
   max-width: 15%;
   height: auto;
   border-radius: 50%;
-  border: 10px solid rgba(255, 255, 255, .75);
+  border: 5px solid rgba(255, 255, 255, .75);
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
+  margin-bottom: 20%;
 }
 
 h1 {
-  opacity: 0.75;
   font-family: 'Bebas Neue Regular';
   font-size: 88px;
   margin-top: 2.5em;
@@ -65,46 +66,27 @@ h1 {
   text-align: center;
 }
 
-h2 {
-  width: 100%;
-  height: auto;
-  background-color: inherit;
-  opacity: 0.75;
-  font-family: 'Bebas Neue Regular';
-  font-size: 56px;
-  padding-top: 0.5em;
-  margin-top: 1em;
-  color: white;
-  text-align: center;
-}
-
 h3 {
-  width: 100%;
-  height: auto;
-  background-color: inherit;
   font-family: 'Bebas Neue Regular';
   font-size: 56px;
-  padding-top: 0.5em;
-  margin-top: 1em;
-  color: lightsteelblue;
+  padding: 0.5em 0 0.5em 0;
+  margin: 1em auto 0.5em auto;
+  background-color: rgba(22, 20, 17, 0.2);
   text-align: center;
 }
 
-.skillsContainer {
-  margin-top: 20em;
-  width: 100%;
-  height: auto;
-  background-color: #303030;
+.container {
   color: white;
-  border-top: 4px solid rgba(255, 255, 255, .25);
+  margin: 5% auto;
+  width: 75%;
+  height: auto;
+  background-color: rgb(0, 0, 0, 0.6);
 }
 
 .skill {
   width: 30%;
   padding: 1.6%;
   display: inline-table;
-  float: none;
-  color: lightsteelblue;
   font-size: 32px;
   text-align: center;
   font-family: "Georgia", "sans-serif";
@@ -118,15 +100,14 @@ h3 {
   display: block;
   margin-left: 45%;
   margin-bottom: 5%;
-  filter: brightness(150%);
 }
 
 .rightSkill {
-  border-left: 2px solid rgba(255, 255, 255, .25);
+  border-left: 1px solid rgb(230, 168, 45);
 }
 
 .middleSkill {
-  border-left: 2px solid rgba(255, 255, 255, .25);
+  border-left: 1px solid rgb(230, 168, 45);
 }
 
 .skillInfo {
@@ -141,15 +122,13 @@ h3 {
   height: 10em;
   padding: 1em;
   margin: 1em;
-  border: 10px solid rgb(255, 255, 255, 0.75);
+  border: 5px solid rgb(255, 255, 255);
   border-radius: 1em;
-  background-color: #3C3B3D;
-  opacity: 0.85;
+  background-color: rgb(25, 25, 25);
 }
 
 #project:hover {
-  border-color: white;
-  opacity: 1;
+  border-color:rgb(230, 168, 45);
 }
 
 .icon {
@@ -177,12 +156,12 @@ h3 {
   display: table;
   padding: 0.5em 0.5em 0.2em;
   margin: auto;
-  color:skyblue;
+  color:rgb(230, 197, 131);
 }
 
 .projectInfo a:hover {
   border-radius: 5%;
-  border-bottom: 2px solid skyblue;
+  border-bottom: 2px solid rgb(230, 197, 131);
 }
 
 #project:hover .icon, #project:hover .projHeader {
@@ -201,26 +180,10 @@ h3 {
   justify-content: center;
   display: flex;
   align-items: center;
-  background-color: inherit;
-  margin-bottom: 10%;
 }
 
-.projectsContainer {
-  width: 100%;
-  margin-top: 0;
-  display: inline-table;
-  background-color: grey; 
-}
-
-.contactContainer {
-  width: 100%;
-  display: inline-table;
-  background-color: #303030;
-}
-
-.contactContainer img {
+.contactInfo img {
   width: 1.25%;
-  height: auto;
   margin-right: 2.5%;
 }
 
@@ -230,27 +193,22 @@ h3 {
   font-size: 24px;
   text-align: center;
   color: white;
-  margin-bottom: 5%;
+  min-height: 120px;
 }
 
 .contactInfo a {
   text-decoration: none;
-}
-
-.contactInfo a {
-  text-decoration: none;
-  border: 2px solid lightsteelblue;
+  border: 3px solid rgb(255, 255, 255, 0.1);
   padding: 0.5%;
 }
 
 .contactInfo a:hover {
-  background-color: lightsteelblue;
-  color: #1D1D1E;
-  border-color: #1D1D1E;
+  border-color: rgb(230, 168, 45);
+  color: rgb(230, 197, 131);
 }
 
 .contactInfo a:hover img{
-  filter: brightness(0%);
+  content:url('src/img/email_colored.png');
 }
 
 ul {

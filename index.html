@@ -16,22 +16,21 @@
     <li class="navigation"><a href="#contactStart">Contact</a></li>
     </ul>
   </div>
-  <p id="home">not visible anyways</p>
+  <p id="home">&nbsp</p>
   <h1> EUGENE LU </h1>
   <div class="avatar">
-    <img class="avatarimg" src="src/img/avatar.jpg">
+    <img src="src/img/avatar.jpg">
   </div>
 
-  <div class="skillsContainer" id="skillStart">
-    <h3 class="">SKILLS</h3>
+  <div class="container" id="skillStart">
+    <h3>SKILLS</h3>
     <div class="skillsCategory">
       <ul>
-      <li class="skill"><img src="src/img/cpp.png">Languages:
-        <p class="skillInfo">JavaScript<br><br>HTML<br><br>CSS<br><br>C++<br><br>C#<br><br>Python<br><br>Swift</p>
+      <li class="skill"><img src="src/img/front_end.png">Front-End:
+        <p class="skillInfo">JavaScript/TypeScript<br><br>HTML<br><br>CSS<br><br>ReactJS<br><br>Bootstrap</p>
       </li>
-      <li class="skill middleSkill"><img src="src/img/vscode.png">Developer Tools:
-        <p class="skillInfo">Visual Studio Code<br><br>Eclipse<br><br>XCode<br><br>Git Terminal<br><br>GitHub<br><br>
-          GitLab<br><br>Atlassian SourceTree<br><br>Atlassian Jira</p>
+      <li class="skill middleSkill"><img src="src/img/back_end.png">Back-End:
+        <p class="skillInfo">SQL (Postgres, SQLite)<br><br>Python<br><br>Flask<br><br>NodeJS<br><br>C++<br></br>C#</p>
       </li>
       <li class="skill rightSkill"><img src="src/img/briefcase.png">Experience:
           <p class="skillInfo">QA Developer, Pelmorex Media (Jan - May 2018)<br><br>
@@ -40,32 +39,37 @@
       </ul>
     </div>
   </div>
-
-  <div class="projectsContainer" id="projStart">
-    <h2>PROJECTS</h2>
+  <div class="container" id="projStart">
+    <h3>PROJECTS</h3>
     <div class="projects">
       <ul>
       <li id="project">
+        <p class="projHeader">sc2Ladder</p>
+        <p class="projectInfo">Web app which allows users to query for StarCraft II players, has leaderboards which are constantly updated, and an API endpoint</p>
+        <p class="projectInfo"><a href="https://sc2ladder.herokuapp.com/">visit website</a></p>
+        <img class="icon" src="src/img/sc2.png">
+      </li>
+      <li id="project">
+        <p class="projHeader">Grid RTS</p>
+        <p class="projectInfo">Browser-based real-time strategy game made using <u>pixi.js</u> with a minimalist, grid-like design. Destroy all your opponent's conduits to win.</p>
+        <p class="projectInfo"><a href="https://github.com/YTP-Studios/grid-rts">source code</a></p>
+        <img class="icon" src="src/img/gridrts.png">
+      </li>
+      <li id="project">
         <p class="projHeader">YenFuBot</p>
-        <p class="projectInfo">Multi-purpose discord bot with moderation tools, StarCraft II MMR tracker, and many other functions.</p>
+        <p class="projectInfo">Multi-purpose discord bot with moderation tools, StarCraft II MMR tracker, and many other fun and useful functions.</p>
         <p class="projectInfo"><a href="https://discordapp.com/api/oauth2/authorize?client_id=480953346941911040&permissions=0&scope=bot">invite me to your server!</a></p>
         <img class="icon" src="src/img/discord.png">
       </li>
-      <li id="project">
-          <p class="projHeader">Grid RTS</p>
-        <p class="projectInfo">Browser-based real-time strategy game made using <u>pixi.js</u> with a minimalist, grid-like design. Destroy all your opponent's conduits to win.</p>
-        <p class="projectInfo"><a href="https://github.com/YTP-Studios/grid-rts">source code</a></p>
-        <img class="icon" src="src/img/gridrts.png"></li>
       </ul>
     </div>
   </div>
 
-  <div class="contactContainer" id="contactStart">
+  <div class="container" id="contactStart">
     <h3>CONTACT</h3>
     <p class=contactInfo> <img src="src/img/phone.png"> Phone: 778-885-5228<br><br>
       <a href="mailto:e6lu@uwaterloo.ca" class="contactInfo"><img src="src/img/email.png">E-mail: e6lu@uwaterloo.ca</a></p>
   </div>
   <script src="Header.js"></script>
-  <script src="PageLoad.js"></script>
 </body>
 </html>
