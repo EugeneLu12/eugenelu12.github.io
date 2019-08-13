@@ -1,6 +1,6 @@
 let shouldAnimate = true;
 
-document.addEventListener('scroll', function() {
+document.addEventListener('scroll', () => {
     let windowHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     let navbar = document.getElementsByClassName('navbar').item(0);
     let scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : 
@@ -25,7 +25,7 @@ function navbarSlidingAnimation(navbar) {
     navbar.style.top = '-100px';
     let pos = -100;
     navbar.style.backgroundColor = '#1f2631';
-    let animation = setInterval(function() {
+    let animation = setInterval(() => {
         if (pos <= 0) {
             navbar.style.top = pos + 'px';
             pos++;
