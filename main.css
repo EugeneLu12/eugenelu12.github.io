@@ -142,6 +142,7 @@ html, body {
 
 .content__header {
   padding-top: 5%;
+  margin: 0;
   text-align: center;
   color: rgb(133,150,165);
   font-size: 40px;
