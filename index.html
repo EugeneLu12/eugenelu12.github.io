@@ -3,73 +3,124 @@
 <head>
   <title>Eugene Lu</title>
   <link rel="stylesheet" type="text/css" href="main.css"/>
-  <link rel="stylesheet" type="text/css" href="fonts.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="navBarHeader">
-    <ul>
-    <li class="navigation" id="navBar"><a href="#home">Home</a></li>
-    <li class="navigation"><a href="#skillStart">Skills</a></li>
-    <li class="navigation"><a href="#projStart">Projects</a></li>
-    <li class="navigation"><a href="resume.html">Resume</a></li>
-    <li class="navigation"><a href="https://github.com/yenfu1">GitHub</a></li>
-    <li class="navigation"><a href="#contactStart">Contact</a></li>
-    </ul>
+<div class="navbar">
+  <ul class="navbar__list">
+    <li class="navbar__list-item"><button onclick="scrollToElement('main')" class="navbar__button">Home</button></li>
+    <li class="navbar__list-item"><button onclick="scrollToElement('content--about')" class="navbar__button">About</button></li>
+    <li class="navbar__list-item"><button onclick="scrollToElement('content--project')" class="navbar__button">Projects</button></li>
+    <li class="navbar__list-item"><a href="https://github.com/yenfu1" class="navbar__link">Github</a></li>
+    <li class="navbar__list-item"><a href="resume.html" class="navbar__link">Resume</a></li>
+    <li class="navbar__list-item"><button onclick="scrollToElement('content--contact')" class="navbar__button">Contact</button></li>
+  </ul>
+</div>
+<div class="bg">
+    <div class="bg__comet"></div>
+    <div class="bg__comet"></div>
+    <div class="bg__comet"></div>
+    <div class="bg__comet"></div>
+</div>
+<div class="main">
+  <div class="main__container">
+    <h1 class="main__header">Eugene Lu<br>Full-stack Developer</h1>
+    <img src="assets/avatar.jpg" class="main__pfp"/>
   </div>
-  <p id="home">&nbsp</p>
-  <h1> EUGENE LU </h1>
-  <div class="avatar">
-    <img src="src/img/avatar.jpg">
-  </div>
-
-  <div class="container" id="skillStart">
-    <h3>SKILLS</h3>
-    <div class="skillsCategory">
-      <ul>
-      <li class="skill"><img src="src/img/front_end.png">Front-End:
-        <p class="skillInfo">JavaScript/TypeScript<br><br>HTML<br><br>CSS<br><br>ReactJS<br><br>Bootstrap</p>
-      </li>
-      <li class="skill middleSkill"><img src="src/img/back_end.png">Back-End:
-        <p class="skillInfo">SQL (Postgres, SQLite)<br><br>Python<br><br>Flask<br><br>NodeJS<br><br>C++<br></br>C#</p>
-      </li>
-      <li class="skill rightSkill"><img src="src/img/briefcase.png">Experience:
-          <p class="skillInfo">QA Developer, Pelmorex Media (Jan - May 2018)<br><br>
-            Teaching Assistant, University of Waterloo (Sep - Dec 2018)<br><br>Instructor, RoboKids (May - Aug 2019)</p>
-      </li>
-      </ul>
+</div>
+<div class="content content--about">
+  <h1 class="content__header">About</h1>
+  <h1 class="content__sub-header content__sub-header--about">Hi, I'm Eugene. I'm studying computer engineering at the University of Waterloo and actively advancing my skillset.</h1>
+  <div class="content__grid-container content__grid-container--about">
+    <div class="content__grid content__grid--about">
+      <div class="content__grid-item"><img  src="assets/front_end.png" class="content__icon"/></div>
+      <div class="content__grid-item"><img src="assets/back_end.png"class="content__icon"/></div>
+      <div class="content__grid-item"><img src="assets/computer.png" class="content__icon"/></div>
+      <div class="content__grid-item"><h1 class="content__sub-header">Front-End</h1></div>
+      <div class="content__grid-item"><h1 class="content__sub-header">Back-End</h1></div>
+      <div class="content__grid-item"><h1 class="content__sub-header">Other</h1></div>
+      <div class="content__grid-item"><p class="content__text">JavaScript</p></div>
+      <div class="content__grid-item"><p class="content__text">Python</p></div>
+      <div class="content__grid-item"><p class="content__text">C++</p></div>
+      <div class="content__grid-item"><p class="content__text">HTML</p></div>
+      <div class="content__grid-item"><p class="content__text">Django</p></div>
+      <div class="content__grid-item"><p class="content__text">Swift</p></div>
+      <div class="content__grid-item"><p class="content__text">CSS</p></div>
+      <div class="content__grid-item"><p class="content__text">Flask</p></div>
+      <div class="content__grid-item"><p class="content__text">Git</p></div>
+      <div class="content__grid-item"><p class="content__text">React</p></div>
+      <div class="content__grid-item"><p class="content__text">Node</p></div>
+      <div class="content__grid-item"><p class="content__text">Agile</p></div>
+      <div class="content__grid-item"><p class="content__text"></p></div>
+      <div class="content__grid-item"><p class="content__text">SQL</p></div>
+      <div class="content__grid-item"><p class="content__text">TDD</p></div>
+      <div class="content__grid-item"><p class="content__text"></p></div>
+      <div class="content__grid-item"><p class="content__text">Mongo</p></div>
     </div>
   </div>
-  <div class="container" id="projStart">
-    <h3>PROJECTS</h3>
-    <div class="projects">
-      <ul>
-      <li id="project">
-        <p class="projHeader">sc2Ladder</p>
-        <p class="projectInfo">Web app which allows users to query for StarCraft II players, has leaderboards which are constantly updated, and an API endpoint</p>
-        <p class="projectInfo"><a href="https://sc2ladder.herokuapp.com/">visit website</a></p>
-        <img class="icon" src="src/img/sc2.png">
-      </li>
-      <li id="project">
-        <p class="projHeader">Grid RTS</p>
-        <p class="projectInfo">Browser-based real-time strategy game made using <u>pixi.js</u> with a minimalist, grid-like design. Destroy all your opponent's conduits to win.</p>
-        <p class="projectInfo"><a href="https://github.com/YTP-Studios/grid-rts">source code</a></p>
-        <img class="icon" src="src/img/gridrts.png">
-      </li>
-      <li id="project">
-        <p class="projHeader">YenFuBot</p>
-        <p class="projectInfo">Multi-purpose discord bot with moderation tools, StarCraft II MMR tracker, and many other fun and useful functions.</p>
-        <p class="projectInfo"><a href="https://discordapp.com/api/oauth2/authorize?client_id=480953346941911040&permissions=0&scope=bot">invite me to your server!</a></p>
-        <img class="icon" src="src/img/discord.png">
-      </li>
-      </ul>
+<div>
+<div class="content content--project">
+  <h1 class="content__header">Projects</h1>
+  <div class="content__grid-container content__grid-container--project">
+    <div class="content__grid content__grid--project">
+      <div class="content__grid-item content__grid-item--project">
+        <div class="content__hidden">
+          <h1 class="content__header content__header--project">sc2Ladder</h1>
+          <h1 class="content__text content__text--project">
+            Search Engine, leaderboard, database, and API for StarCraft II players.<br>
+            Built using Python and Django and uses a PostgreSQL database.<br><br><br>
+            <a href="https://sc2ladder.herokuapp.com" class="content__link content__link--project">Visit Website</a>
+          </h1>
+        </div>
+        <img src="assets/sc2ladder.PNG" class="content__image">
+      </div>
+      <div class="content__grid-item content__grid-item--project">
+          <div class="content__hidden">
+            <h1 class="content__header content__header--project">AniMusic</h1>
+            <h1 class="content__text content__text--project">
+              Multiplayer trivia game for anime music.<br>
+              Built using Javascript, Node, React, and Express and uses a Mongo database.<br><br><br>
+              <a href="https://sc2ladder.herokuapp.com" class="content__link content__link--project">Learn More</a>
+            </h1>
+          </div>
+        <img src="assets/animusic.png" class="content__image">
+      </div>
+      <div class="content__grid-item content__grid-item--project">
+        <div class="content__hidden">
+          <h1 class="content__header content__header--project">YenFuBot</h1>
+          <h1 class="content__text content__text--project">
+              Discord bot with moderation tools, StarCraft II player querying, games, and more.<br>
+              Written in JavaScript, player querying handled using sc2Ladder api.<br><br><br>
+              <a href="https://discordapp.com/oauth2/authorize?client_id=480953346941911040&permissions=0&scope=botm" class="content__link content__link--project">Add To Your Server</a>
+          </h1>
+        </div>
+        <img src="assets/discord.png" class="content__image">
+      </div>
+      <div class="content__grid-item content__grid-item--project">
+        <div class="content__hidden">
+            <h1 class="content__header content__header--project">Grid-RTS</h1>
+            <h1 class="content__text content__text--project">
+                Multiplayer game with simplistic, grid-like design.<br>
+                Written in JavaScript, Node, and React. Graphics rendered using Phaser.js<br><br><br>
+                <a href="https://github.com/YTP-Studios/grid-rts" class="content__link content__link--project">Learn More</a>
+            </h1>
+          </div>
+        <img src="assets/grid_rts.png" class="content__image">
+      </div>
+  </div>
+</div>
+<div class="content content--contact">
+    <h1 class="content__header">Contact</h1>
+    <div class="content__form-container">
+      <form class="content__text content__form" onsubmit="JavaScript:sendEmail()">
+        <input class="content__text content__form-input" type="text" name="name" placeholder="Name">
+        <input class="content__text content__form-input" type="text" name="subject" placeholder="Subject">
+        <textarea class="content__text content__form-input content__form-input--large" name="message" placeholder="Enter Message Here"></textarea>
+        <input class="content__text content__form-submit" type="submit" value="Send">
+        </form>
     </div>
   </div>
-
-  <div class="container" id="contactStart">
-    <h3>CONTACT</h3>
-    <p class=contactInfo> <img src="src/img/phone.png"> Phone: 778-885-5228<br><br>
-      <a href="mailto:e6lu@uwaterloo.ca" class="contactInfo"><img src="src/img/email.png">E-mail: e6lu@uwaterloo.ca</a></p>
-  </div>
-  <script src="Header.js"></script>
 </body>
+<script src="header.js"></script>
+<script src="mail.js"></script>
 </html>
