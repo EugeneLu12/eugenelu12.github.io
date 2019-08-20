@@ -204,10 +204,11 @@ html, body {
   border-radius: 4px;
   color: rgb(159,173,189);
   padding: 2% 4%;
-  font-size: 20px;
+  font-size: 3.6vmin;
   font-weight: 600;
   font-family: 'Segoe UI', 'Roboto', sans-serif;
   text-decoration: none;
+  display: inline-block;
 }
 
 .content__link:hover {
@@ -258,15 +259,13 @@ html, body {
 }
 
 .content__header--project {
-  font-size: 3.6vh;
+  font-size: 4.8vmin;
+  margin-bottom: 5%;
 }
 
 .content__text--project {
-  font-size: 1.8vh;
-}
-
-.content__link--project {
-  font-size: 1.8vh;
+  font-size: 2.4vmin;
+  margin: 2%;
 }
 
 .content__form-container {
@@ -320,4 +319,10 @@ html, body {
 
 .content__form-submit:hover {
   border-color: rgb(73, 173, 248);
+}
+
+@media screen and (max-width: 768px) {
+  .content__grid--project {
+    grid-template-columns: 100%;
+  }
 }
