@@ -13,7 +13,7 @@
       <li class="navbar__list-item"><button onclick="scrollToElement('content--skills')" class="navbar__button">Skills</button></li>
       <li class="navbar__list-item"><button onclick="scrollToElement('content--projects')" class="navbar__button">Projects</button></li>
       <li class="navbar__list-item"><a href="https://github.com/yenfu1" class="navbar__link">Github</a></li>
-      <li class="navbar__list-item"><a href="resume.html" class="navbar__link">Resume</a></li>
+      <li class="navbar__list-item"><a href="resume.pdf" class="navbar__link">Resume</a></li>
     </ul>
   </div>
   <canvas class="canvas"></canvas>
@@ -92,7 +92,7 @@
             <div class="content__hidden">
               <p class="content__text content__text--project">
                 Multiplayer music trivia game<br><br>
-                <strong>Node, React.js, Express, Mongo</strong>
+                <strong>Node, React.js, Express, Mongo, socket.io</strong>
               </p>
               <a href="https://github.com/YenFu1/AniMusic" class="content__link">Learn More</a>
             </div>
@@ -101,10 +101,10 @@
         <div class="content__grid-item content__grid-item--project">
           <div class="content__hidden">
             <p class="content__text content__text--project">
-                PNG utilities suite for concatenating PNGs and checking for file corruption<br><br>
+                Command line tools for concatenating PNGs, checking for PNG file corruption, and validating PNG headers<br><br>
                 <strong>C</strong>
             </p>
-            <a href="" class="content__link">Learn more</a>
+            <a href="#content--project" class="content__link">Learn more</a>
           </div>
           <img src="src/crc.png" class="content__image">
         </div>
@@ -121,12 +121,22 @@
         <div class="content__grid-item content__grid-item--project">
           <div class="content__hidden">
             <p class="content__text content__text--project">
-              Embedded .WAV audio player on an FPGA board with playback controls and double/half speed settings<br><br>
-              <strong>C</strong>
+              Embedded .WAV audio player with playback controls and double/half speed settings<br><br>
+              <strong>C, Altera FPGA, FatFs</strong>
             </p>
-            <a href="https://github.com/YTP-Studios/grid-rts" class="content__link">Learn More</a>
+            <a href="#content--project" class="content__link">Learn More</a>
           </div>
           <img src="src/fpga.jpg" class="content__image">
+        </div>
+        <div class="content__grid-item content__grid-item--project">
+          <div class="content__hidden">
+            <p class="content__text content__text--project">
+              Motorized wheelchair with integrated direction/speed controls and battery monitor<br><br>
+              <strong>C, TI MSP430</strong>
+            </p>
+            <a href="#content--project" class="content__link">Learn More</a>
+          </div>
+          <img src="src/msp.jpg" class="content__image">
         </div>
       </div>
     </div>
