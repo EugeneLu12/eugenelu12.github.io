@@ -1,7 +1,6 @@
 html, body {
     margin: 0;
     padding: 0;
-    background: rgb(39,44,56);
 }
 .resume {
     display: grid;
