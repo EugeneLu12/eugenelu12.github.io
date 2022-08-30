@@ -1,6 +1,6 @@
 let introHeader = document.getElementsByClassName('intro__text')[0];
 let cmd = "cat about.txt"
-let aboutMeStr = "<br>Hi, I'm Eugene. I'm studying computer engineering at the University of Waterloo."
+let aboutMeStr = "<br>Hi, I'm Eugene. I'm software engineer with 2 years of experience. I'm a hardcore Gopher."
 let index = 0;
 
 window.onload = () => {
