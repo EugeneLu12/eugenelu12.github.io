@@ -42,11 +42,28 @@ html, body {
     color: white;
 }
 
-.canvas {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;	
-    z-index: 0;
+.bg-wrapper {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+          rgba(0, 0, 0, 0.5), 
+          rgba(0, 0, 0, 0.2)
+        ), url("src/bg-main.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 20%;
+}
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100vw;
+  height: 50vh;
 }
 
 .intro {
@@ -62,6 +79,7 @@ html, body {
     height: 25%;
     width: 50%;
     color: white;
+    text-shadow: 1px 1px black;
     font-family: Consolas, monaco, monospace;
     font-size: 20px;
     font-style: normal;
@@ -73,7 +91,7 @@ html, body {
 .content {
     background: rgb(39,44,56);
     width: 100vw;
-    padding-bottom: 10px; 
+    padding-bottom: 50px; 
 }
 
 .content__text {
@@ -88,6 +106,7 @@ html, body {
     text-align: center;
     font-size: 32px;
     font-weight: 400;
+    text-shadow: 3px 3px #880088;
 }
 
 .content__text--sub-header {
