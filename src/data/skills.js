@@ -5,6 +5,7 @@ import {
   SiJavascript,
   SiTypescript,
   SiPostgresql,
+  SiSnowflake,
   SiTerraform,
   SiKubernetes,
   SiFlask,
@@ -14,7 +15,7 @@ import {
   SiDotnet,
   SiReact,
 } from 'react-icons/si'
-import { TbBrandCSharp, TbSql } from 'react-icons/tb'
+import { TbBrandCSharp, TbSql, TbDatabase } from 'react-icons/tb'
 import { FaAws } from 'react-icons/fa6'
 
 export const skillGroups = [
@@ -35,6 +36,8 @@ export const skillGroups = [
       { name: 'AWS', icon: FaAws, color: '#FF9900' },
       { name: 'Postgres', icon: SiPostgresql, color: '#4169E1' },
       { name: 'SQL', icon: TbSql, color: '#475569' },
+      { name: 'Snowflake', icon: SiSnowflake, color: '#29B5E8' },
+      { name: 'Yugabyte', icon: TbDatabase, color: '#FF6B4A' },
       { name: 'Terraform', icon: SiTerraform, color: '#7B42BC' },
       { name: 'Kubernetes', icon: SiKubernetes, color: '#326CE5' },
     ],

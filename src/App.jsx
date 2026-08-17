@@ -1,22 +1,32 @@
-import { HashRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Skills from './components/Skills'
+import Experience from './components/Experience'
+import Projects from './components/Projects'
 import Footer from './components/Footer'
-import Home from './pages/Home'
-import ExperiencePage from './pages/ExperiencePage'
+import Reveal from './components/Reveal'
 
 export default function App() {
   return (
-    <HashRouter>
-      <div className="flex min-h-screen flex-col bg-white">
-        <Navbar />
-        <main className="flex-1">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/experience" element={<ExperiencePage />} />
-          </Routes>
-        </main>
+    <div className="flex min-h-screen flex-col bg-white">
+      <Navbar />
+      <main className="flex-1">
+        <Reveal>
+          <Hero />
+        </Reveal>
+        <Reveal>
+          <Skills />
+        </Reveal>
+        <Reveal>
+          <Experience />
+        </Reveal>
+        <Reveal>
+          <Projects />
+        </Reveal>
+      </main>
+      <Reveal className="mt-auto">
         <Footer />
-      </div>
-    </HashRouter>
+      </Reveal>
+    </div>
   )
 }
