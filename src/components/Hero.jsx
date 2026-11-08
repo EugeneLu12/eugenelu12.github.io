@@ -1,4 +1,3 @@
-import { FaArrowDown } from 'react-icons/fa6'
 import { socials } from '../data/socials'
 
 const linkedin = socials.find((s) => s.name === 'LinkedIn')?.url
@@ -40,16 +39,6 @@ export default function Hero() {
             Get in touch on LinkedIn
           </a>
         </div>
-      </div>
-
-      <div className="mx-auto w-full max-w-5xl px-6 pb-8">
-        <a
-          href="#experience"
-          className="inline-flex items-center gap-2 text-[0.9375rem] text-muted transition-colors hover:text-ink"
-        >
-          <FaArrowDown className="h-3.5 w-3.5" aria-hidden="true" />
-          Next stop: Experience
-        </a>
       </div>
     </section>
   )
