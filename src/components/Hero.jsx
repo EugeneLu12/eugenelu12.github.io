@@ -1,17 +1,15 @@
 import { socials } from '../data/socials'
-import { experience } from '../data/experience'
 
 const linkedin = socials.find((s) => s.name === 'LinkedIn')?.url
 
-// Career stops, oldest first, spread along the route line.
-const stops = [...experience].reverse().map((job, i, all) => ({
-  company: job.company,
-  label: job.end === 'Present' ? `Since ${job.start.split(' ')[1]}` : job.start.split(' ')[1],
-  current: job.end === 'Present',
-  at: (i / (all.length - 1)) * 76, // percent along the route; the last stop sits at 76%
-}))
+// The route is a map of this page: each stop is a link to a section.
+const stops = [
+  { label: 'Experience', note: "Where I've worked", href: '#experience' },
+  { label: 'Projects', note: "What I've built", href: '#projects' },
+  { label: 'Skills', note: 'What I use', href: '#skills' },
+].map((stop, i, all) => ({ ...stop, at: (i / (all.length - 1)) * 76 })) // last stop at 76%
 
-// Load sequence timing (ms): name, then the line draws, stops light up as it passes them.
+// Load sequence timing (ms): name, then the line draws, stops appear as it passes them.
 const LINE_START = 250
 const LINE_MS = 700
 const stopDelay = (at) => LINE_START + LINE_MS * (at / 76)
@@ -26,12 +24,12 @@ export default function Hero() {
     <section id="top" className="flex min-h-[calc(100svh-var(--spacing-nav)-1px)] flex-col">
       <div className="mx-auto my-auto w-full max-w-5xl px-6 py-16">
         <h1
-          className={`-ml-[0.05em] animate-rise text-[clamp(3.75rem,13vw,9.5rem)] leading-[0.9] font-extrabold tracking-[-0.045em] ${motion}`}
+          className={`-ml-[0.04em] animate-rise text-[3.5rem] leading-[0.95] font-extrabold tracking-[-0.035em] sm:text-[6rem] ${motion}`}
         >
           Eugene Lu
         </h1>
 
-        {/* The route: bleeds in from the left edge, through each job, and keeps going. */}
+        {/* The route: bleeds in from the left edge, through each section, and keeps going. */}
         <div className="relative mt-10 mb-28 sm:mt-12">
           <div className="relative h-2" aria-hidden="true">
             <span
@@ -48,28 +46,34 @@ export default function Hero() {
           </div>
 
           {/* Stops are offset by half a marker so the first marker's edge, and every label, lines up with the text. */}
-          <ol aria-label="Career so far" className="absolute inset-x-0 top-1">
-            {stops.map((stop) => (
-              <li
-                key={stop.company}
-                className="absolute top-0 -translate-y-1/2"
-                style={{ left: `calc(${stop.at}% + 0.625rem)` }}
-              >
-                <span
-                  aria-hidden="true"
-                  className={`station -ml-2.5 animate-pop ${stop.current ? 'bg-line!' : ''} ${motion}`}
-                  style={delay(stopDelay(stop.at))}
-                />
-                <span
-                  className={`absolute top-8 -left-2.5 animate-rise whitespace-nowrap ${motion}`}
-                  style={delay(stopDelay(stop.at) + 80)}
+          <nav aria-label="Page sections">
+            <ol className="absolute inset-x-0 top-1">
+              {stops.map((stop) => (
+                <li
+                  key={stop.href}
+                  className="absolute top-0 -translate-y-1/2"
+                  style={{ left: `calc(${stop.at}% + 0.625rem)` }}
                 >
-                  <span className="block leading-tight font-extrabold">{stop.company}</span>
-                  <span className="block text-[0.9375rem] text-muted">{stop.label}</span>
-                </span>
-              </li>
-            ))}
-          </ol>
+                  <a href={stop.href} className="group -m-3 block rounded p-3">
+                    <span
+                      aria-hidden="true"
+                      className={`station -ml-2.5 animate-pop transition-colors group-hover:bg-line! ${motion}`}
+                      style={delay(stopDelay(stop.at))}
+                    />
+                    <span
+                      className={`absolute top-8 -left-2.5 animate-rise whitespace-nowrap ${motion}`}
+                      style={delay(stopDelay(stop.at) + 80)}
+                    >
+                      <span className="block leading-tight font-extrabold underline decoration-transparent decoration-2 underline-offset-4 transition-colors group-hover:decoration-line">
+                        {stop.label}
+                      </span>
+                      <span className="block text-[0.9375rem] text-muted">{stop.note}</span>
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
         </div>
 
         <p
