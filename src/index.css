@@ -13,6 +13,29 @@
   --color-line: #0369a1;
   --color-line-strong: #075985; /* hover on blue fills */
   --color-line-light: #7dd3fc; /* blue that reads on navy */
+
+  /* Hero load sequence: one orchestrated moment, played once */
+  --animate-rise: rise 450ms ease-out both;
+  --animate-draw: draw 700ms cubic-bezier(0.6, 0, 0.2, 1) both;
+  --animate-pop: pop 300ms ease-out both;
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      translate: 0 12px;
+    }
+  }
+  @keyframes draw {
+    from {
+      scale: 0 1;
+    }
+  }
+  @keyframes pop {
+    from {
+      opacity: 0;
+      scale: 0.4;
+    }
+  }
 }
 
 @layer base {

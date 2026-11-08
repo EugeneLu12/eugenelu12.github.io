@@ -1,29 +1,90 @@
 import { socials } from '../data/socials'
+import { experience } from '../data/experience'
 
 const linkedin = socials.find((s) => s.name === 'LinkedIn')?.url
+
+// Career stops, oldest first, spread along the route line.
+const stops = [...experience].reverse().map((job, i, all) => ({
+  company: job.company,
+  label: job.end === 'Present' ? `Since ${job.start.split(' ')[1]}` : job.start.split(' ')[1],
+  current: job.end === 'Present',
+  at: (i / (all.length - 1)) * 76, // percent along the route; the last stop sits at 76%
+}))
+
+// Load sequence timing (ms): name, then the line draws, stops light up as it passes them.
+const LINE_START = 250
+const LINE_MS = 700
+const stopDelay = (at) => LINE_START + LINE_MS * (at / 76)
+const TEXT_START = LINE_START + LINE_MS - 100
+
+const motion = 'motion-reduce:animate-none'
+const delay = (ms) => ({ animationDelay: `${ms}ms` })
 
 export default function Hero() {
   return (
     // Fills the screen below the navbar (and its 1px border); content sits centred.
     <section id="top" className="flex min-h-[calc(100svh-var(--spacing-nav)-1px)] flex-col">
       <div className="mx-auto my-auto w-full max-w-5xl px-6 py-16">
-        <h1 className="-ml-[0.04em] text-[3.5rem] leading-[0.95] font-extrabold tracking-[-0.035em] sm:text-[6rem]">
+        <h1
+          className={`-ml-[0.05em] animate-rise text-[clamp(3.75rem,13vw,9.5rem)] leading-[0.9] font-extrabold tracking-[-0.045em] ${motion}`}
+        >
           Eugene Lu
         </h1>
 
-        {/* The route line: bleeds off the left edge and stops at a station. */}
-        <div className="relative mt-7 mb-10 flex h-2 w-56 items-center sm:w-80" aria-hidden="true">
-          <span className="absolute inset-y-0 right-2 -left-[100vw] bg-line" />
-          <span className="station absolute right-0 translate-x-1/2" />
+        {/* The route: bleeds in from the left edge, through each job, and keeps going. */}
+        <div className="relative mt-10 mb-28 sm:mt-12">
+          <div className="relative h-2" aria-hidden="true">
+            <span
+              className={`absolute inset-y-0 right-full -left-[100vw] animate-rise bg-line ${motion}`}
+            />
+            <span
+              className={`absolute inset-y-0 left-0 w-[calc(76%+0.625rem)] origin-left animate-draw bg-line ${motion}`}
+              style={delay(LINE_START)}
+            />
+            <span
+              className={`absolute inset-y-0 right-0 left-[calc(76%+0.625rem)] animate-rise bg-[repeating-linear-gradient(to_right,var(--color-line)_0_10px,transparent_10px_18px)] ${motion}`}
+              style={delay(LINE_START + LINE_MS)}
+            />
+          </div>
+
+          {/* Stops are offset by half a marker so the first marker's edge, and every label, lines up with the text. */}
+          <ol aria-label="Career so far" className="absolute inset-x-0 top-1">
+            {stops.map((stop) => (
+              <li
+                key={stop.company}
+                className="absolute top-0 -translate-y-1/2"
+                style={{ left: `calc(${stop.at}% + 0.625rem)` }}
+              >
+                <span
+                  aria-hidden="true"
+                  className={`station -ml-2.5 animate-pop ${stop.current ? 'bg-line!' : ''} ${motion}`}
+                  style={delay(stopDelay(stop.at))}
+                />
+                <span
+                  className={`absolute top-8 -left-2.5 animate-rise whitespace-nowrap ${motion}`}
+                  style={delay(stopDelay(stop.at) + 80)}
+                >
+                  <span className="block leading-tight font-extrabold">{stop.company}</span>
+                  <span className="block text-[0.9375rem] text-muted">{stop.label}</span>
+                </span>
+              </li>
+            ))}
+          </ol>
         </div>
 
-        <p className="max-w-[36rem] text-xl leading-relaxed sm:text-[1.375rem]">
+        <p
+          className={`max-w-[36rem] animate-rise text-xl leading-relaxed sm:text-[1.375rem] ${motion}`}
+          style={delay(TEXT_START)}
+        >
           Nice to meet you! I'm a software engineer based in Toronto. I currently work at Instacart,
           where I'm building the system and infrastructure used to provide you a seemless grocery
           experience at scale.
         </p>
 
-        <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+        <div
+          className={`mt-10 flex animate-rise flex-wrap items-center gap-x-8 gap-y-4 ${motion}`}
+          style={delay(TEXT_START + 80)}
+        >
           <a
             href="#projects"
             className="rounded-md bg-line px-5 py-3 font-semibold text-white transition-colors hover:bg-line-strong"
