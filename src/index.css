@@ -1,1 +1,69 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Overpass", ui-sans-serif, system-ui, sans-serif;
+
+  /* ui-ux-pro-max palette: "Professional navy + blue CTA" */
+  --color-paper: #f8fafc;
+  --color-ink: #0f172a;
+  --color-muted: #475569;
+  --color-rule: #e2e8f0;
+  --color-line: #0369a1;
+  --color-line-strong: #075985; /* hover on blue fills */
+  --color-line-light: #7dd3fc; /* blue that reads on navy */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--color-line-light);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-ink);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@utility station {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 9999px;
+  background: #fff;
+  border: 4px solid var(--color-ink);
+}
+
+@utility link-underline {
+  text-decoration-line: underline;
+  text-decoration-color: var(--color-line);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 5px;
+  transition: text-decoration-color 150ms;
+
+  &:hover {
+    text-decoration-color: var(--color-ink);
+  }
+}

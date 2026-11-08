@@ -3,10 +3,10 @@ import ProjectCard from './ProjectCard'
 
 export default function Projects() {
   return (
-    <section id="projects" className="bg-gray-50">
-      <div className="mx-auto max-w-5xl px-6 py-20">
-        <h2 className="mb-10 text-2xl font-bold text-gray-900 sm:text-3xl">Projects</h2>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+    <section id="projects" className="border-t border-rule">
+      <div className="mx-auto max-w-5xl px-6 py-20 sm:py-24">
+        <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Projects</h2>
+        <div className="mt-12 flex flex-col gap-20">
           {projects.map((project) => (
             <ProjectCard key={project.title} {...project} />
           ))}

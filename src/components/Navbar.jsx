@@ -1,28 +1,37 @@
 const sectionLinks = [
-  { label: 'Skills', id: 'skills' },
   { label: 'Experience', id: 'experience' },
   { label: 'Projects', id: 'projects' },
+  { label: 'Skills', id: 'skills' },
 ]
 
 export default function Navbar() {
-  const goToSection = (id) => (e) => {
-    e.preventDefault()
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-  }
-
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur">
-      <nav className="mx-auto flex max-w-5xl items-center justify-end px-6 py-4">
-        <ul className="flex gap-6 text-sm font-medium text-gray-700">
-          {sectionLinks.map((link) => (
-            <li key={link.id}>
-              <a href={`#${link.id}`} onClick={goToSection(link.id)} className="hover:text-gray-900">
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </header>
+    <>
+      <a
+        href="#main"
+        className="sr-only z-[60] rounded-md bg-ink px-4 py-2 font-semibold text-paper focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
+      >
+        Skip to content
+      </a>
+      <header className="sticky top-0 z-50 border-b border-rule bg-paper/90 backdrop-blur">
+        <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+          <a href="#top" className="font-extrabold tracking-tight">
+            Eugene Lu
+          </a>
+          <ul className="flex gap-5 text-[0.9375rem] text-muted sm:gap-7">
+            {sectionLinks.map((link) => (
+              <li key={link.id}>
+                <a
+                  href={`#${link.id}`}
+                  className="-my-2 inline-block py-2 transition-colors hover:text-ink"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </header>
+    </>
   )
 }

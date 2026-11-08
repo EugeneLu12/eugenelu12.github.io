@@ -1,41 +1,72 @@
 import { FaGithub } from 'react-icons/fa6'
+import useInView from '../hooks/useInView'
+
+// Subtle scroll reveal: short fade with a 12px rise, ease-out, played once.
+// The image leads and the text follows 50ms behind.
+const reveal = (shown) =>
+  `transition-[opacity,translate] duration-[400ms] ease-out motion-reduce:transition-none ${
+    shown ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
+  }`
 
 export default function ProjectCard({ title, description, tags, link, repo, image }) {
+  const [ref, shown] = useInView({ rootMargin: '0px 0px -10% 0px' })
+
   return (
-    <div className="flex flex-col overflow-hidden rounded-lg border-2 border-blue-300 bg-white shadow-md transition-all duration-200 hover:-translate-y-1 hover:border-blue-500 hover:shadow-lg">
-      {image && <img src={image} alt={`${title} screenshot`} className="w-full h-auto" />}
-      <div className="flex flex-1 flex-col gap-4 p-6">
-        <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
-        <p className="text-sm text-gray-600">{description}</p>
-        <div className="flex flex-wrap gap-2">
+    <article
+      ref={ref}
+      className="grid items-start gap-8 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] md:gap-12"
+    >
+      {image && (
+        <img
+          src={image.src}
+          alt={`${title} screenshot`}
+          width={image.width}
+          height={image.height}
+          loading="lazy"
+          decoding="async"
+          className={`h-auto w-full rounded-lg border border-rule bg-white shadow-[0_24px_48px_-24px_rgba(15,23,42,0.3)] ${reveal(shown)}`}
+        />
+      )}
+      <div
+        className={`md:pt-2 ${reveal(shown)}`}
+        style={{ transitionDelay: shown ? '50ms' : '0ms' }}
+      >
+        <h3 className="text-2xl font-extrabold tracking-tight sm:text-[1.75rem]">{title}</h3>
+        <p className="mt-3 text-muted">{description}</p>
+
+        <p className="mt-6 text-[0.9375rem] font-semibold">Built with</p>
+        <ul className="mt-2 flex flex-wrap gap-2">
           {tags.map((tag) => (
-            <span
+            <li
               key={tag}
-              className="rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700"
+              className="rounded border border-rule bg-white px-2.5 py-0.5 text-[0.875rem]"
             >
               {tag}
-            </span>
+            </li>
           ))}
-        </div>
+        </ul>
+
         {(link || repo) && (
-          <div className="mt-auto flex items-center gap-4 text-sm font-semibold">
+          <div className="mt-8 flex items-center gap-6 font-semibold">
             {link && (
-              <a href={link} className="text-blue-600 hover:text-blue-700">
-                Live demo →
+              <a href={link} className="link-underline">
+                Open live demo
               </a>
             )}
             {repo && (
               <a
                 href={repo}
-                aria-label="View source on GitHub"
-                className="text-gray-700 hover:text-gray-900"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 hover:text-line"
               >
-                <FaGithub className="h-5 w-5" />
+                <FaGithub className="h-5 w-5" aria-hidden="true" />
+                View on GitHub
               </a>
             )}
           </div>
         )}
       </div>
-    </div>
+    </article>
   )
 }
