@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 @theme {
+  --spacing-nav: 3.75rem; /* navbar height, so the hero can fill the rest of the screen */
+
   --font-sans: "Overpass", ui-sans-serif, system-ui, sans-serif;
 
   /* ui-ux-pro-max palette: "Professional navy + blue CTA" */

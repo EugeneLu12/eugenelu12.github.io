@@ -14,7 +14,7 @@ export default function Navbar() {
         Skip to content
       </a>
       <header className="sticky top-0 z-50 border-b border-rule bg-paper/90 backdrop-blur">
-        <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+        <nav className="mx-auto flex h-nav max-w-5xl items-center justify-between px-6">
           <a href="#top" className="font-extrabold tracking-tight">
             Eugene Lu
           </a>
