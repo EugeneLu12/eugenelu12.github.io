@@ -77,7 +77,7 @@ export default function Hero() {
           style={delay(TEXT_START)}
         >
           Nice to meet you! I'm a software engineer based in Toronto. I currently work at Instacart,
-          where I'm building the system and infrastructure used to provide you a seemless grocery
+          where I'm building the systems and infrastructure used to provide you a seemless grocery
           experience at scale.
         </p>
 
