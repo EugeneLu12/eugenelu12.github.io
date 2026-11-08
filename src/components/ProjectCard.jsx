@@ -59,7 +59,8 @@ export default function ProjectCard({ title, description, tags, link, repo, imag
                 className="inline-flex items-center gap-2 rounded-md border-2 border-line px-4 py-2.5 font-semibold text-line transition-colors hover:bg-line hover:text-white"
               >
                 {repo && <FaGithub className="h-5 w-5" aria-hidden="true" />}
-                {repo ? 'View on GitHub' : 'Open live demo'}
+                {/* Overpass sets capitals high in the line box; drop the label to optical centre */}
+                <span className="relative top-[0.15em]">{repo ? 'View on GitHub' : 'Open live demo'}</span>
               </a>
             </div>
           )}
