@@ -7,8 +7,7 @@ const reveal = (shown) =>
     shown ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
   }`
 
-// The whole card opens the repo: the GitHub link stretches over the card,
-// so there is one focusable element and no nested links.
+// The card itself is not a link: only its button is, so what looks clickable is clickable.
 export default function ProjectCard({ title, description, tags, link, repo, image, index = 0 }) {
   const [ref, shown] = useInView({ rootMargin: '0px 0px -10% 0px' })
   const href = repo || link
@@ -19,13 +18,7 @@ export default function ProjectCard({ title, description, tags, link, repo, imag
       className={`flex ${reveal(shown)}`}
       style={{ transitionDelay: shown ? `${index * 50}ms` : '0ms' }}
     >
-      <article
-        className={`group relative flex flex-1 flex-col overflow-hidden rounded-xl border border-rule bg-white transition-[border-color,box-shadow] duration-200 ${
-          href
-            ? 'hover:border-line hover:shadow-[0_20px_40px_-24px_rgba(15,23,42,0.35)] has-[a:focus-visible]:outline-3 has-[a:focus-visible]:outline-offset-3 has-[a:focus-visible]:outline-ink'
-            : ''
-        }`}
-      >
+      <article className="flex flex-1 flex-col overflow-hidden rounded-xl border border-rule bg-white">
         {image && (
           <div className="aspect-[16/9] overflow-hidden border-b border-rule bg-paper">
             <img
@@ -41,7 +34,7 @@ export default function ProjectCard({ title, description, tags, link, repo, imag
         )}
 
         <div className="flex flex-1 flex-col p-6 sm:p-7">
-          <h3 className="text-2xl font-extrabold tracking-tight transition-colors group-hover:text-line">
+          <h3 className="text-2xl font-extrabold tracking-tight">
             {title}
           </h3>
           <p className="mt-2 text-muted">{description}</p>
@@ -63,7 +56,7 @@ export default function ProjectCard({ title, description, tags, link, repo, imag
                 href={href}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 font-semibold focus-visible:outline-none after:absolute after:inset-0 after:content-['']"
+                className="inline-flex items-center gap-2 rounded-md border-2 border-line px-4 py-2.5 font-semibold text-line transition-colors hover:bg-line hover:text-white"
               >
                 {repo && <FaGithub className="h-5 w-5" aria-hidden="true" />}
                 {repo ? 'View on GitHub' : 'Open live demo'}
