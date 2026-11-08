@@ -29,7 +29,7 @@ export default function Hero() {
           Eugene Lu
         </h1>
 
-        {/* The route: bleeds in from the left edge, through each section, and keeps going. */}
+        {/* The route: bleeds in from the left edge, and ends at the last section. */}
         <div className="relative mt-10 mb-28 sm:mt-12">
           <div className="relative h-2" aria-hidden="true">
             <span
@@ -38,10 +38,6 @@ export default function Hero() {
             <span
               className={`absolute inset-y-0 left-0 w-[calc(76%+0.625rem)] origin-left animate-draw bg-line ${motion}`}
               style={delay(LINE_START)}
-            />
-            <span
-              className={`absolute inset-y-0 right-0 left-[calc(76%+0.625rem)] animate-rise bg-[repeating-linear-gradient(to_right,var(--color-line)_0_10px,transparent_10px_18px)] ${motion}`}
-              style={delay(LINE_START + LINE_MS)}
             />
           </div>
 
